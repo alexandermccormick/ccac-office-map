@@ -5,11 +5,9 @@ export class County {
 
   constructor(public title: string, public geojson: any) {}
 
-  addTo(map: L.Map) {
+  addTo(map: L.Map, options: L.GeoJSONOptions) {
     if (!this.isActive) {
-      L.geoJson(this.geojson, {
-        style: { color: "#000000"}
-      }).addTo(map);
+      L.geoJson(this.geojson, options).addTo(map);
 
       this.isActive = true;
     }

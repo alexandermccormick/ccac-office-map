@@ -1,11 +1,10 @@
 import { LitElement, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import leafletStyles from "leaflet/dist/leaflet.css?inline";
-import "./style.css";
+import "./styles.css";
 import { InteractiveMap } from "./InteractiveMap";
-import mapMarkerIcon from "./assets/map-marker.svg?raw";
-
-const markerIcon = `data:image/svg+xml;base64,${window.btoa(mapMarkerIcon)}`;
+import mapMarkerIcon from "./assets/map-marker.svg";
+import {colors} from './Colors';
 
 @customElement('office-map')
 export class OfficeMap extends LitElement {
@@ -21,14 +20,32 @@ export class OfficeMap extends LitElement {
     }
 
     .map-marker-icon {
+      --container-size: 28px;
+      --marker-size: calc(var(--container-size) * 0.98);
+
       display: inline-block;
-      background-color: #000;
-      -webkit-mask: url(${markerIcon}) center/1rem 1rem no-repeat;
-      mask: url(${markerIcon}) center/1rem 1rem no-repeat;
-      width: 20px !important;
-      height: 20px !important;
+      -webkit-mask: url(${mapMarkerIcon}) center/var(--marker-size) var(--marker-size) no-repeat;
+      mask: url(${mapMarkerIcon}) center/var(--marker-size) var(--marker-size) no-repeat;
+      width: var(--container-size) !important;
+      height: var(--container-size) !important;
     }
 
+    .fresno {
+      background-color: ${colors.fresno};
+    }
+
+    .kern {
+      background-color: ${colors.kern};
+    }
+
+
+    .kings {
+      background-color: ${colors.kings};
+    }
+
+    .san-joaquin {
+      background-color: ${colors.sanJoaquin};
+    }
   `);
 
   private mapController: InteractiveMap = new InteractiveMap();

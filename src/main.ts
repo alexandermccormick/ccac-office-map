@@ -1,14 +1,17 @@
 import { LitElement, unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import leafletStyles from "leaflet/dist/leaflet.css?inline";
+import styles from "./styles.css?inline";
 import "./styles.css";
 import { InteractiveMap } from "./InteractiveMap";
 import mapMarkerIcon from "./assets/map-marker.svg";
+import phoneSvg from "./assets/phone.svg";
+import emailSvg from "./assets/email.svg";
 import {colors} from './Colors';
 
 @customElement('office-map')
 export class OfficeMap extends LitElement {
-  static override styles = unsafeCSS(leafletStyles + `
+  static override styles = unsafeCSS(styles + leafletStyles + `
     :host {
       display: block;
       border: solid 1px gray;
@@ -26,6 +29,28 @@ export class OfficeMap extends LitElement {
       display: inline-block;
       -webkit-mask: url(${mapMarkerIcon}) center/var(--marker-size) var(--marker-size) no-repeat;
       mask: url(${mapMarkerIcon}) center/var(--marker-size) var(--marker-size) no-repeat;
+      width: var(--container-size) !important;
+      height: var(--container-size) !important;
+    }
+
+    .email-icon {
+      --container-size: 28px;
+      --marker-size: calc(var(--container-size) * 0.98);
+
+      display: inline-block;
+      -webkit-mask: url(${emailSvg}) center/var(--marker-size) var(--marker-size) no-repeat;
+      mask: url(${emailSvg}) center/var(--marker-size) var(--marker-size) no-repeat;
+      width: var(--container-size) !important;
+      height: var(--container-size) !important;
+    }
+
+    .phone-icon {
+      --container-size: 28px;
+      --marker-size: calc(var(--container-size) * 0.98);
+
+      display: inline-block;
+      -webkit-mask: url(${phoneSvg}) center/var(--marker-size) var(--marker-size) no-repeat;
+      mask: url(${phoneSvg}) center/var(--marker-size) var(--marker-size) no-repeat;
       width: var(--container-size) !important;
       height: var(--container-size) !important;
     }

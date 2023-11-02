@@ -110,7 +110,7 @@ export const offices: Array<Office> = [
     title: "Fresno",
     color: colors.fresno,
     className: "fresno",
-    coordinates: [36.76797871235611, -119.7275982587615],
+    coordinates: [36.767994238365894, -119.72770559692866],
     address: {
       street: "1939 North Gateway Blvd",
       city: "Fresno",

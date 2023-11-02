@@ -42,10 +42,6 @@ export class OfficeMarker {
         this.marker.closeTooltip();
       }
     });
-    //this.marker.addEventListener("mouseout", (event) => {
-    //  console.log("mouseover", event);
-    //  this.marker.closePopup();
-    //});
   }
 
   addTo(group: L.FeatureGroup) {
@@ -56,16 +52,16 @@ export class OfficeMarker {
 function popupTemplate(office: Office): string {
   return `
     <div>
-      <h1 class="text-4xl">${office.title} Office</h1>
-      <p>
-        Phone:
-        <a href="tel:+1${officeContact.phone.match(/\d/g)}">
+      <h1 class="text-4xl font-bold">${office.title} Office</h1>
+      <p class="flex justify-start items-center align-middle gap-2">
+        <span class="phone-icon bg-black"></span>
+        <a href="tel:+1${officeContact.phone.match(/\d/g)}" class="text-lg">
           ${officeContact.phone}
         </a>
       </p>
-      <p>
-        Email:
-        <a href="mailto:${officeContact.email}">
+      <p class="flex justify-start items-center align-middle gap-2">
+        <span class="email-icon bg-black"></span>
+        <a href="mailto:${officeContact.email}" class="text-lg">
           ${officeContact.email}
         </a>
       </p>
@@ -75,9 +71,9 @@ function popupTemplate(office: Office): string {
 
 function tooltipTemplate(office: Office): string {
   return `
-    <div>
-      <h1 class="text-4xl">${office.title} Office</h1>
-      <p>Click For Detailed View</p>
+    <div class="p-2 text-center">
+      <h1 class="text-2xl font-semibold">${office.title} Office</h1>
+      <p class="text-lg">Select For Detailed View</p>
     </div>
   `;
 }

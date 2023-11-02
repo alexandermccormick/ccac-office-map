@@ -8,11 +8,6 @@ const mapSettings: MapOptions = {
   maxZoom: 18,
 };
 
-const tooltipOptions = {
-  offset: new L.Point(10, 0),
-  opacity: 1,
-};
-
 export class InteractiveMap {
   /**
    * A reference to the instance, should one exist already

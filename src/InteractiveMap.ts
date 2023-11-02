@@ -1,10 +1,16 @@
 import L from "leaflet";
 import { offices } from './Offices';
 import type { Map as LeafletMap, MapOptions } from "leaflet";
+import {OfficeMarker} from "./OfficeMarker";
 
 const mapSettings: MapOptions = {
   zoom: 8,
   maxZoom: 18,
+};
+
+const tooltipOptions = {
+  offset: new L.Point(10, 0),
+  opacity: 1,
 };
 
 export class InteractiveMap {
@@ -60,6 +66,9 @@ export class InteractiveMap {
    */
   initializeMap(target: HTMLElement) {
     this.map = L.map(target, mapSettings);
+
+    this.markerGroup.addTo(this.map);
+
     L.tileLayer("https://api.maptiler.com/maps/streets/256/{z}/{x}/{y}.png?key={apiKey}", {
       //@ts-ignore - apiKey does not exist on TileLayerOptions
       apiKey: import.meta.env.VITE_MAPTILER_KEY,
@@ -69,19 +78,14 @@ export class InteractiveMap {
 
   addMarkers(countyBoundries: boolean) {
     for (let office of offices) {
-      const myIcon = L.divIcon({
-        className: "map-marker-icon",
-      });
-
-      this.markerGroup.addTo(this.map)
-
-      L.marker(office.coordinates as L.LatLngTuple, {
-        icon: myIcon,
-      }).addTo(this.markerGroup);
+      const marker = new OfficeMarker(office);
+      marker.addTo(this.markerGroup);
 
       if (countyBoundries) {
         for (let county of office.counties) {
-          county.addTo(this.map);
+          county.addTo(this.map, {
+            style: { color: office.color }
+          });
         }
       }
     }

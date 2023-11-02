@@ -1,8 +1,11 @@
 import { fresno, kern, kings, madera, sanJoaquin, stanislaus, tulare } from "./Counties";
+import { colors } from "./Colors";
 import type { County } from "./Counties";
 
-interface Office {
+export interface Office {
   title: string;
+  color: string;
+  className: string;
   coordinates: Array<number>;
   address: Address;
   counties: Array<County>;
@@ -25,6 +28,8 @@ export const officeContact = {
 export const offices: Array<Office> = [
   {
     title: "Modesto",
+    color: colors.sanJoaquin,
+    className: "san-joaquin",
     coordinates: [37.6598898372289, -121.02975140196665],
     address: {
       street: "1620 N Carpenter RD, Ste D-43",
@@ -33,8 +38,8 @@ export const offices: Array<Office> = [
       zipCode: 95351
     },
     counties: [
-      stanislaus,
-      sanJoaquin
+      sanJoaquin,
+      stanislaus
     ],
     insurancs: [
       "Health Plan of San Joaquin",
@@ -43,6 +48,8 @@ export const offices: Array<Office> = [
   },
   {
     title: "Bakersfield",
+    color: colors.kern,
+    className: "kern",
     coordinates: [35.370701643705374, -119.01827716183341],
     address: {
       street: "1400 Chester Ave",
@@ -61,6 +68,8 @@ export const offices: Array<Office> = [
   },
   {
     title: "Lamont",
+    color: colors.kern,
+    className: "kern",
     coordinates: [35.27308527307525, -118.91391022119583],
     address: {
       street: "9009 Weedpatch Hwy, Ste B",
@@ -79,6 +88,8 @@ export const offices: Array<Office> = [
   },
   {
     title: "Delano",
+    color: colors.kern,
+    className: "kern",
     coordinates: [35.75487467276078, -119.24986314042047],
     address: {
       street: "375 S Dover Parkway, Ste C Unit 2",
@@ -97,6 +108,8 @@ export const offices: Array<Office> = [
   },
   {
     title: "Fresno",
+    color: colors.fresno,
+    className: "fresno",
     coordinates: [36.76797871235611, -119.7275982587615],
     address: {
       street: "1939 North Gateway Blvd",
@@ -115,6 +128,8 @@ export const offices: Array<Office> = [
   },
   {
     title: "Visalia",
+    color: colors.kings,
+    className: "kings",
     coordinates: [36.333140494955636, -119.29930637795711],
     address: {
       street: "410 W Center Ave, Ste 103",
@@ -123,8 +138,8 @@ export const offices: Array<Office> = [
       zipCode: 93291
     },
     counties: [
-      tulare,
-      kings
+      kings,
+      tulare
     ],
     insurancs: [
       "Anthem Blue Cross",

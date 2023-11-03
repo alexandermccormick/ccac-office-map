@@ -144,7 +144,7 @@ export const offices: Array<Office> = [
     insurancs: [
       "Anthem Blue Cross",
       "CalViva Health (Tulare County)",
-      "Health Net (Kigns County)"
+      "Health Net (Kings County)"
     ]
   },
 ];

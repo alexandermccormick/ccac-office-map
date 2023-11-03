@@ -1,5 +1,6 @@
 import L from "leaflet";
 import { officeContact } from './Offices';
+import { isCaresMode } from './Mode';
 import type { Office } from "./Offices";
 
 export class OfficeMarker {
@@ -8,10 +9,10 @@ export class OfficeMarker {
   private tooltip: L.Tooltip;
 
   constructor(office: Office) {
+    const iconClass = isCaresMode ? office.className : "base-icon";
     const myIcon = L.divIcon({
-      className: `map-marker-icon ${office.className}`,
+      className: `map-marker-icon ${iconClass}`,
     });
-
 
     this.marker = L.marker(office.coordinates as L.LatLngTuple, {
       icon: myIcon,

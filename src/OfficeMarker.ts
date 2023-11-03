@@ -50,6 +50,8 @@ export class OfficeMarker {
 }
 
 function popupTemplate(office: Office): string {
+  const { city, state, street, street2, zipCode } = office.address;
+  const addressLine = `${street}, ${street2 || ""} ${city}, ${state}, ${zipCode}`;
   return `
     <div>
       <h1 class="text-center text-4xl font-bold">${office.title} Office</h1>
@@ -64,6 +66,19 @@ function popupTemplate(office: Office): string {
         <span class="email-icon bg-gray-600"></span>
         <a href="mailto:${officeContact.email}" class="text-lg">
           ${officeContact.email}
+        </a>
+      </p>
+      <p class="flex justify-start items-center align-middle gap-2 text-lg leading-none">
+        <span class="map-marker-icon bg-gray-600"></span>
+        <a href="https://maps.google.com/?q=${addressLine}" target="_blank">
+          <a href="https://maps.apple.com/maps?q=${addressLine}" target="_blank">
+            ${street}
+            <br />
+            ${
+              street2 ? (street2 + "<br/ >") : ""
+            }
+            ${city}, ${state} ${zipCode}
+          </a>
         </a>
       </p>
     </div>

@@ -14,6 +14,7 @@ export interface Office {
 
 interface Address {
   street: string;
+  street2?: string;
   city: string;
   state: string;
   zipCode: number;
@@ -24,7 +25,6 @@ export const officeContact = {
   email: "admin@centralcalasthma.org"
 }
 
-//export const offices: Array<Office> = _offices;
 export const offices: Array<Office> = [
   {
     title: "Modesto",
@@ -32,7 +32,8 @@ export const offices: Array<Office> = [
     className: "san-joaquin",
     coordinates: [37.6598898372289, -121.02975140196665],
     address: {
-      street: "1620 N Carpenter RD, Ste D-43",
+      street: "1620 N Carpenter RD",
+      street2: "Ste D-43",
       city: "Modesto",
       state: "CA",
       zipCode: 95351
@@ -72,7 +73,8 @@ export const offices: Array<Office> = [
     className: "kern",
     coordinates: [35.27308527307525, -118.91391022119583],
     address: {
-      street: "9009 Weedpatch Hwy, Ste B",
+      street: "9009 Weedpatch Hwy",
+      street2: "Ste B",
       city: "Lamont",
       state: "CA",
       zipCode: 93241
@@ -92,7 +94,8 @@ export const offices: Array<Office> = [
     className: "kern",
     coordinates: [35.75487467276078, -119.24986314042047],
     address: {
-      street: "375 S Dover Parkway, Ste C Unit 2",
+      street: "375 S Dover Parkway",
+      street2: "Ste C Unit 2",
       city: "Delano",
       state: "CA",
       zipCode: 93215
@@ -132,7 +135,8 @@ export const offices: Array<Office> = [
     className: "kings",
     coordinates: [36.333140494955636, -119.29930637795711],
     address: {
-      street: "410 W Center Ave, Ste 103",
+      street: "410 W Center Ave",
+      street2: "Ste 103",
       city: "Visalia",
       state: "CA",
       zipCode: 93291
@@ -144,7 +148,7 @@ export const offices: Array<Office> = [
     insurancs: [
       "Anthem Blue Cross",
       "CalViva Health (Tulare County)",
-      "Health Net (Kigns County)"
+      "Health Net (Kings County)"
     ]
   },
 ];

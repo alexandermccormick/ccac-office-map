@@ -107,7 +107,7 @@ export const offices: Array<Office> = [
     ]
   },
   {
-    title: "Fresno",
+    title: "Administrative",
     color: colors.fresno,
     className: "fresno",
     coordinates: [36.767994238365894, -119.72770559692866],

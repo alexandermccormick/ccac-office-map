@@ -4,9 +4,10 @@ import leafletStyles from "leaflet/dist/leaflet.css?inline";
 import styles from "./styles.css?inline";
 import "./styles.css";
 import { InteractiveMap } from "./InteractiveMap";
+import emailSvg from "./assets/email.svg";
+import insuranceSVG from "./assets/insurance.svg";
 import mapMarkerIcon from "./assets/map-marker.svg";
 import phoneSvg from "./assets/phone.svg";
-import emailSvg from "./assets/email.svg";
 import {colors} from './Colors';
 
 @customElement('office-map')
@@ -44,6 +45,17 @@ export class OfficeMap extends LitElement {
       height: var(--container-size) !important;
     }
 
+    .insurance-icon {
+      --container-size: 28px;
+      --marker-size: calc(var(--container-size) * 0.98);
+
+      display: inline-block;
+      -webkit-mask: url(${insuranceSVG}) center/var(--marker-size) var(--marker-size) no-repeat;
+      mask: url(${insuranceSVG}) center/var(--marker-size) var(--marker-size) no-repeat;
+      width: var(--container-size) !important;
+      height: var(--container-size) !important;
+    }
+
     .phone-icon {
       --container-size: 28px;
       --marker-size: calc(var(--container-size) * 0.98);
@@ -53,6 +65,10 @@ export class OfficeMap extends LitElement {
       mask: url(${phoneSvg}) center/var(--marker-size) var(--marker-size) no-repeat;
       width: var(--container-size) !important;
       height: var(--container-size) !important;
+    }
+
+    .base-icon {
+      background-color: ${colors.base};
     }
 
     .fresno {

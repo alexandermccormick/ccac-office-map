@@ -1,18 +1,25 @@
-const kern = "#9ABDE3";
+/**
+ * Base color used for CCAC Office map icons
+ */
+const base = "#4459A4";
 
-//const sanJoaquin = "#A44489";
-const sanJoaquin = "#6997CE";
+const kern = "#565FB6";
+//const kern = "#9ABDE3";
+
+const sanJoaquin = "#B6568F";
+//const sanJoaquin = "#6997CE";
 const stanislaus = sanJoaquin;
 
-//const fresno = "#A48F44";
-const fresno = "#B9E4F9";
+const fresno = "#B6AD56";
+//const fresno = "#B9E4F9";
 const madera = fresno;
 
-//const kings = "#44A45F";
-const kings = "#4459A4";
+const kings = "#56B67D";
+//const kings = "#B6AD56";
 const tulare = kings;
 
 export const colors = {
+  base,
   fresno,
   kern,
   kings,

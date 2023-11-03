@@ -1,7 +1,8 @@
 import L from "leaflet";
 import { offices } from './Offices';
+import { isCaresMode } from './Mode';
+import { OfficeMarker } from "./OfficeMarker";
 import type { Map as LeafletMap, MapOptions } from "leaflet";
-import {OfficeMarker} from "./OfficeMarker";
 
 const mapSettings: MapOptions = {
   zoom: 8,
@@ -76,7 +77,7 @@ export class InteractiveMap {
       const marker = new OfficeMarker(office);
       marker.addTo(this.markerGroup);
 
-      if (countyBoundries) {
+      if (isCaresMode && countyBoundries) {
         for (let county of office.counties) {
           county.addTo(this.map, {
             style: { color: office.color }

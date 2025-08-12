@@ -8,7 +8,7 @@ import emailSvg from "./assets/email.svg";
 import insuranceSVG from "./assets/insurance.svg";
 import mapMarkerIcon from "./assets/map-marker.svg";
 import phoneSvg from "./assets/phone.svg";
-import {colors} from './Colors';
+import { colors } from './Colors';
 
 @customElement('office-map')
 export class OfficeMap extends LitElement {
@@ -79,6 +79,9 @@ export class OfficeMap extends LitElement {
       background-color: ${colors.kern};
     }
 
+    .sacramento {
+      background-color: ${colors.sacramento};
+    }
 
     .kings {
       background-color: ${colors.kings};

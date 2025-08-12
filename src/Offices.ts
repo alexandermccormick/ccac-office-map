@@ -1,4 +1,4 @@
-import { fresno, kern, kings, madera, sanJoaquin, stanislaus, tulare } from "./Counties";
+import { fresno, kern, kings, madera, sacramento, sanJoaquin, stanislaus, tulare } from "./Counties";
 import { colors } from "./Colors";
 import type { County } from "./Counties";
 
@@ -68,19 +68,19 @@ export const offices: Array<Office> = [
     ]
   },
   {
-    title: "Lamont",
-    color: colors.kern,
-    className: "kern",
-    coordinates: [35.27308527307525, -118.91391022119583],
+    title: "Sacramento",
+    color: colors.sacramento,
+    className: "sacramento",
+    coordinates: [38.565310927089655, -121.50993580000001],
     address: {
-      street: "9009 Weedpatch Hwy",
-      street2: "Ste B",
-      city: "Lamont",
+      street: "2555 3rd Street",
+      street2: "Suite 208",
+      city: "Sacramento",
       state: "CA",
-      zipCode: 93241
+      zipCode: 95818
     },
     counties: [
-      kern
+      sacramento
     ],
     insurancs: [
       "Kern Family Health Care",

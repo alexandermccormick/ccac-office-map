@@ -1,10 +1,12 @@
 /**
  * Base color used for CCAC Office map icons
  */
-const base = "#4459A4";
+const base = "#E93838";
 
 const kern = "#565FB6";
 //const kern = "#9ABDE3";
+
+const sacramento = "#FFD700";
 
 const sanJoaquin = "#B6568F";
 //const sanJoaquin = "#6997CE";
@@ -24,6 +26,7 @@ export const colors = {
   kern,
   kings,
   madera,
+  sacramento,
   stanislaus,
   sanJoaquin,
   tulare
